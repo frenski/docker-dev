@@ -1,0 +1,17 @@
+services:
+  vizipedia-django-app:
+    image: vizlai-dev:0.0.1
+    restart: unless-stopped
+    command: /vizipedia/docker-entrypoint.sh
+    volumes:
+      - ./pg_hba.conf:/etc/postgresql/15/main/pg_hba.conf
+      - ./vizlaipedia-django/:/vizipedia/vizlaipedia-django/
+      - ./docker-entrypoint.sh:/vizipedia/docker-entrypoint.sh:ro
+      - ./db/:/var/lib/postgresql
+      - ./restore/:/restore:ro
+    working_dir: /vizipedia
+    hostname: docker-vizipedia-python-django-app
+    ports:
+      - 127.0.0.1:8000:8000
+    logging:
+      driver: local

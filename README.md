@@ -6,6 +6,8 @@ Run the docker compose commands to start / stop the environment.
 
 Add the env.py file to the env_settings of the vizlaipedia-django app.
 
+The config in env.py should be `env = 'local_docker'`
+
 
 start:
 

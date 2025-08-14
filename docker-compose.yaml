@@ -1,6 +1,6 @@
 services:
   vizipedia-django-app:
-    image: vizlai-dev:0.0.1
+    image: yanefrenski/vizlai-dev:0.0.1
     restart: unless-stopped
     command: /vizipedia/docker-entrypoint.sh
     volumes:
